@@ -6,13 +6,27 @@ const fortunes = [
   "🌸 Peace is coming to sit beside you 🕊️",
   "⏳ You don’t have to rush, Krishn isn’t rushing you 💫",
   "💗 Someone finds comfort in just knowing you exist 🧸",
-  "💌 You are part of someone’s happy thought 💗",
+  "💌 You are part of someone’s happy thought 💗"
 ];
 
-const button = document.getElementById("cookie-btn");
-const fortuneText = document.getElementById("fortune");
-
-button.addEventListener("click", () => {
+function openCookie() {
   const randomIndex = Math.floor(Math.random() * fortunes.length);
-  fortuneText.textContent = fortunes[randomIndex];
-});
+  const randomFortune = fortunes[randomIndex];
+
+  document.getElementById("fortune").innerText = randomFortune;
+}
+
+function copyFortune() {
+  const text = document.getElementById("fortune").innerText;
+
+  if (!text || text === "Reveal your Fate...") return;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(".copy");
+    const original = btn.innerText;
+    btn.innerText = "copied!";
+    setTimeout(() => btn.innerText = original, 1000);
+  }).catch(err => {
+    console.error("Copy failed:", err);
+  });
+}
