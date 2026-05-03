@@ -22,20 +22,57 @@ p {
   min-height: 40px; 
 }
 
-button {
-  color: rgb(248, 214, 214);
-  background: #682201;      
-  padding: 13px 20px;
-  border-radius: 13px;
-  cursor: pointer;
-  font-size: 14px;
+.cookiecrack {
+  background: linear-gradient(135deg, #611701, #4b1607);
+  color: rgb(250, 230, 205);
   border: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #f8c6c6;
-  transition: background 0.3s, color 0.3s;
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+
+  text-transform: lowercase; 
+
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cookiecrack:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(255, 182, 193, 0.6);
+}
+
+.cookiecrack:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(255, 182, 193, 0.3);
 }
 
 button:hover {
-  background: #a04d2c;
-  color: #290000;
+  background: #fac5b8;
+  color: #160000;
+}
+
+.copy {
+  background: transparent;
+  color: #f7e0e0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.copy:hover /* little slight hover */ {
+  opacity: 1;
+  color: #555;
+  border-color: #bbb;
+}
+
+/* to feel the click */
+.copy:active {
+  transform: scale(0.95);
 }

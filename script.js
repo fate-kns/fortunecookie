@@ -7,12 +7,32 @@ const fortunes = [
   "⏳ You don’t have to rush, Krishn isn’t rushing you 💫",
   "💗 Someone finds comfort in just knowing you exist 🧸",
   "💌 You are part of someone’s happy thought 💗",
+  "🌟 Surrender to me completely, and I will protect you from everything 🌟",
+  "💖 In every heart, I reside; love me, and find eternal peace 💖",
+  "✨ Fear not, for I am always with you, guiding your every step ✨",
+  "🌸 True happiness blooms when you let go and trust in divine will 🌸",
+  "🕉️ Your devotion is my greatest joy; offer it with a pure heart 🕉️",
+  "🪼 Just close your eyes and feel the love 🫧"
 ];
 
-const button = document.getElementById("cookie-btn");
-const fortuneText = document.getElementById("fortune");
-
-button.addEventListener("click", () => {
+function openCookie() {
   const randomIndex = Math.floor(Math.random() * fortunes.length);
-  fortuneText.textContent = fortunes[randomIndex];
-});
+  const randomFortune = fortunes[randomIndex];
+
+  document.getElementById("fortune").innerText = randomFortune;
+}
+
+function copyFortune() {
+  const text = document.getElementById("fortune").innerText;
+
+  if (!text || text === "Reveal your Fate...") return;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(".copy");
+    const original = btn.innerText;
+    btn.innerText = "copied!";
+    setTimeout(() => btn.innerText = original, 1000);
+  }).catch(err => {
+    console.error("Copy failed:", err);
+  });
+}

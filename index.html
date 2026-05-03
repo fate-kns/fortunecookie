@@ -7,15 +7,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
 <title>Fortune Cookie</title>
+<link rel="icon" type="image/x-icon" href="fortune-cookie.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <h1>🍪 Fortune Cookie</h1>
-        <p id="fortune">Reveal your Fate...</p>
-        <button id="cookie-btn">Open a Cookie</button>
-        </div>
+<div class="card">
+    <h1>🥠 Fortune Cookie</h1>
 
-    <script src="script.js"></script>
+    <p id="fortune">Reveal your Fate...</p>
+
+    <button class="cookiecrack"       onclick="openCookie()">
+    open a cookie 🥠
+    </button>
+
+  <!-- copy buttons alignment -->
+    <div class="copy-wrapper">
+    <button class="copy" onclick="copyFortune()">copy</button>
+    </div>
+    </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
